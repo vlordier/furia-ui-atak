@@ -17,3 +17,7 @@ export const IconRedXMark: Component<{ size?: number }> = (props) => (
     <path fill="none" stroke="currentColor" stroke-width="2" d="M6 6l12 12M18 6L6 18" />
   </svg>
 )
+
+export const IconLayers = svg('M12 3l9 5-9 5-9-5 9-5zm0 8.5l9 5-9 5-9-5 9-5z')
+export const IconPoint = svg('M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4a3 3 0 100 6 3 3 0 000-6z')
+export const IconCaret = svg('M7 10l5 5 5-5H7z')

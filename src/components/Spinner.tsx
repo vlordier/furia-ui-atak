@@ -1,4 +1,5 @@
 import { For, type Component } from 'solid-js'
+import { IconCaret } from './icons'
 
 export type SpinnerOption = { id: string; label: string }
 
@@ -10,8 +11,13 @@ export const Spinner: Component<{
 }> = (props) => (
   <label class="atak-spinner">
     {props.label ?? 'Spinner'}
-    <select data-testid="atak-spinner" value={props.value} onChange={(event) => props.onChange?.(event.currentTarget.value)}>
-      <For each={props.options}>{(opt) => <option value={opt.id}>{opt.label}</option>}</For>
-    </select>
+    <span class="atak-spinner-wrap">
+      <select data-testid="atak-spinner" value={props.value} onChange={(event) => props.onChange?.(event.currentTarget.value)}>
+        <For each={props.options}>{(opt) => <option value={opt.id}>{opt.label}</option>}</For>
+      </select>
+      <span class="atak-spinner-caret" aria-hidden="true">
+        <IconCaret size={16} />
+      </span>
+    </span>
   </label>
 )

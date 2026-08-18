@@ -140,10 +140,28 @@
 .atak-edittext[data-error] input,
 .atak-edittext[data-state='error'] input { border-bottom-color: var(--atak-error); color: var(--atak-error); }
 .atak-edittext[data-state='inactive'] input { color: #898989; border-bottom-color: #444; }
+.atak-spinner-wrap {
+  position: relative;
+  display: block;
+  margin-top: 4px;
+}
 .atak-spinner select {
-  padding: 8px 10px;
+  display: block;
+  width: 100%;
+  padding: 8px 28px 8px 10px;
   background: linear-gradient(180deg, var(--atak-gradient-start), var(--atak-gradient-stop));
   border: 1px solid #505050;
+  color: #fff;
+  appearance: none;
+  font: inherit;
+}
+.atak-spinner-caret {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #fff;
 }
 
 .atak-seekbar { display: block; font-size: 11px; color: var(--atak-muted); }
