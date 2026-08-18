@@ -61,3 +61,7 @@ import '@furia/ui-atak/tokens.css'
 - Hosts (`tupac` `ds-tak-edge`) may depend on this package.
 
 See [PLATFORM-SPLIT.md](./PLATFORM-SPLIT.md).
+
+## Pair Design skill
+
+Project skill (Grok): `.grok/skills/pair-design/` — vendored from [mary13/pair-design-agent-skill](https://github.com/mary13/pair-design-agent-skill) (MIT). Invoke with `/pair-design` or “let’s pair design”. One artifact per turn; decisions go in `decision-template-lite.md` / `decision-template.md`.
