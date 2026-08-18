@@ -79,23 +79,34 @@
 .atak-checkbox input,
 .atak-radio input {
   appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   margin: 0;
-  border: 1px solid #6a6a6a;
+  border: 1.5px solid #6a6a6a;
   background: #ffffff1a;
   flex-shrink: 0;
+  position: relative;
 }
 .atak-checkbox input:checked {
   border-color: #a7a8a9;
-  background:
-    linear-gradient(135deg, transparent 45%, #33b5e5 45%, #33b5e5 55%, transparent 55%) center / 10px 10px no-repeat,
-    #ffffff1a;
+  background: #ffffff1a;
+  box-shadow: inset 0 0 0 2px transparent;
 }
-.atak-radio input { border-radius: 50%; }
+.atak-checkbox input:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0;
+  width: 6px;
+  height: 11px;
+  border: solid #33b5e5;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.atak-radio input { border-radius: 50%; border-color: #696d6e; }
 .atak-radio input:checked {
   border-color: #9e9e9e;
-  background: radial-gradient(circle at 50% 50%, #d3f3ff 0 4px, #33b5e5 5px 6px, #ffffff1a 7px);
+  background: radial-gradient(circle at 50% 50%, #d3f3ff 0 4px, #33b5e5 4px 7px, #ffffff1a 8px);
 }
 
 .atak-edittext,
@@ -148,18 +159,49 @@
   position: relative;
   z-index: 1;
   width: 100%;
+  height: 22px;
   margin: 0;
-  accent-color: #33b5e599;
+  background: transparent;
+  appearance: none;
+}
+.atak-seekbar input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #33b5e599;
+  border: 1px solid #3785a2;
+  box-shadow: 0 0 0 2px #33b5e573;
+}
+.atak-seekbar input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #33b5e599;
+  border: 1px solid #3785a2;
 }
 
 .atak-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 6px 8px;
+  gap: 6px;
+  height: 41px;
+  padding: 0 8px;
   background: #000;
-  border-bottom: 1px solid var(--atak-border);
+  border-bottom: 1px solid #333;
+  color: #fff;
+}
+.atak-toolbar .atak-button {
+  min-height: 28px;
+  padding: 2px 8px;
+  font-size: 11px;
+}
+.atak-icon-button {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
   color: #fff;
 }
 .atak-toolbar-burger {

@@ -5,6 +5,9 @@ export const ListView: Component<{
   onSelect?: (id: string) => void
 }> = (props) => (
   <ul class="atak-listview" data-testid="atak-listview">
+    <li class="atak-list-header" style={{ padding: '6px 10px', color: '#fff', 'border-bottom': '1px solid #555', 'font-size': '12px' }}>
+      List
+    </li>
     <For each={props.items}>
       {(item) => (
         <li>

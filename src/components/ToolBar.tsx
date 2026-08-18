@@ -1,8 +1,8 @@
-import { For, type Component } from 'solid-js'
+import { For, type Component, type JSX } from 'solid-js'
 import { Button } from './Button'
 import { IconHamburger, IconOverflow } from './icons'
 
-export type ToolBarItem = { id: string; label: string; tone?: 'primary' | 'ghost' | 'danger' }
+export type ToolBarItem = { id: string; label: string; tone?: 'primary' | 'ghost' | 'danger'; icon?: JSX.Element }
 
 export const ToolBar: Component<{
   title?: string
@@ -11,14 +11,20 @@ export const ToolBar: Component<{
 }> = (props) => (
   <header class="atak-toolbar" data-testid="atak-toolbar">
     <button type="button" class="atak-toolbar-burger" aria-label="Menu" onClick={() => props.onAction?.('menu')}>
-      <IconHamburger size={14} />
+      <IconHamburger size={16} />
     </button>
-    <strong style={{ 'letter-spacing': '0.06em', 'font-size': '0.75rem', flex: 1 }}>{props.title ?? 'ToolBar'}</strong>
-    <div style={{ display: 'flex', gap: '6px' }}>
+    <strong style={{ 'letter-spacing': '0.04em', 'font-size': '0.75rem', flex: 1, 'font-weight': 500 }}>{props.title ?? 'ToolBar'}</strong>
+    <div style={{ display: 'flex', gap: '2px', 'align-items': 'center' }}>
       <For each={props.items}>
         {(item) =>
-          item.id === 'overflow' ? (
-            <Button label="More" showLabel={false} icon={<IconOverflow size={14} />} tone="ghost" onClick={() => props.onAction?.(item.id)} />
+          item.icon || item.id === 'overflow' ? (
+            <Button
+              label={item.label}
+              showLabel={false}
+              icon={item.icon ?? <IconOverflow size={16} />}
+              tone="ghost"
+              onClick={() => props.onAction?.(item.id)}
+            />
           ) : (
             <Button label={item.label} tone={item.tone ?? 'ghost'} onClick={() => props.onAction?.(item.id)} />
           )
