@@ -14,14 +14,15 @@
   --atak-gradient-stop: #020202;
   --atak-dock-start: #050506;
   --atak-dock-stop: #272d33;
-  --atak-font: ui-sans-serif, system-ui, sans-serif;
+  --atak-font: Roboto, ui-sans-serif, system-ui, sans-serif;
+  --atak-rem: 16px;
 }
 
 .atak-kit {
   color: var(--atak-text);
   background: var(--atak-bg);
   font-family: var(--atak-font);
-  font-size: 13px;
+  font-size: var(--atak-rem);
 }
 
 .atak-button {
@@ -57,6 +58,14 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+}
+.atak-button[data-state='pressed'] {
+  background: #585858;
+  border-color: #333;
+}
+.atak-button[data-variant='outlined'][data-state='pressed'] {
+  background: #32a4ce;
+  border-color: #2c6074;
 }
 
 .atak-checkbox,
@@ -111,7 +120,9 @@
   outline: none;
   border-bottom-color: var(--atak-accent-focus);
 }
-.atak-edittext[data-error] input { border-bottom-color: var(--atak-error); color: var(--atak-error); }
+.atak-edittext[data-error] input,
+.atak-edittext[data-state='error'] input { border-bottom-color: var(--atak-error); color: var(--atak-error); }
+.atak-edittext[data-state='inactive'] input { color: #898989; border-bottom-color: #444; }
 .atak-spinner select {
   padding: 8px 10px;
   background: linear-gradient(180deg, var(--atak-gradient-start), var(--atak-gradient-stop));
@@ -119,11 +130,26 @@
 }
 
 .atak-seekbar { display: block; font-size: 11px; color: var(--atak-muted); }
-.atak-seekbar input[type='range'] {
-  display: block;
-  width: 100%;
+.atak-seekbar-track {
+  position: relative;
+  height: 22px;
   margin-top: 6px;
-  accent-color: var(--atak-accent);
+}
+.atak-seekbar-track::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10px;
+  height: 3px;
+  background: linear-gradient(90deg, #33b5e5 var(--atak-seek, 40%), #393a3b var(--atak-seek, 40%));
+}
+.atak-seekbar input[type='range'] {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  accent-color: #33b5e599;
 }
 
 .atak-toolbar {

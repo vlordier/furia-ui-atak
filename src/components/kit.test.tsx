@@ -14,6 +14,7 @@ import { MapSource } from './MapSource'
 import { RadioButton } from './RadioButton'
 import { TextView } from './TextView'
 import { DynamicOps } from './DynamicOps'
+import { RadialMenu } from './RadialMenu'
 
 describe('kit controls', () => {
   it('toggles checkbox', () => {
@@ -125,6 +126,15 @@ describe('kit controls', () => {
     ))
     fireEvent.click(getAllByTestId('atak-radio')[1]!)
     expect(onChange).toHaveBeenCalledWith('replay')
+  })
+
+  it('picks a radial wedge', () => {
+    const onPick = vi.fn()
+    const { getByTestId } = render(() => (
+      <RadialMenu items={[{ id: 'goto', label: 'Go' }, { id: 'chat', label: 'CH' }]} onPick={onPick} />
+    ))
+    fireEvent.click(getByTestId('atak-radial-chat'))
+    expect(onPick).toHaveBeenCalledWith('chat')
   })
 
   it('renders a Dynamic Ops scene with map markers and dock', () => {

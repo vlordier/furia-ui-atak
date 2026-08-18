@@ -29,6 +29,7 @@ import {
   DynamicOps,
   DeviceFrame,
   MapMarker,
+  IconGoto,
 } from '../src'
 
 export const previews: Record<string, Component> = {
@@ -56,7 +57,13 @@ export const previews: Record<string, Component> = {
   },
   edittext: () => {
     const [v, setV] = createSignal('')
-    return <EditText label="Callsign" value={v()} onInput={setV} placeholder="HAWK-1" />
+    return (
+      <div style={{ display: 'grid', gap: '12px', 'max-width': '280px' }}>
+        <EditText label="Callsign" value={v()} onInput={setV} placeholder="HAWK-1" />
+        <EditText label="Inactive" value="OWL-2" state="inactive" />
+        <EditText label="Error" value="bad" error />
+      </div>
+    )
   },
   textview: () => <TextView text="Read-only TextView — training CoT, not official ATAK." muted />,
   seekbar: () => {
@@ -79,8 +86,11 @@ export const previews: Record<string, Component> = {
   button: () => (
     <div style={{ display: 'flex', gap: '8px', 'flex-wrap': 'wrap', 'align-items': 'flex-start' }}>
       <Button label="Default" />
+      <Button label="Pressed" state="pressed" />
       <Button label="Outlined" variant="outlined" />
-      <Button label="Tile" variant="tile" />
+      <Button label="Outlined pressed" variant="outlined" state="pressed" />
+      <Button label="Tile" type="tile" icon={<IconGoto size={18} />} />
+      <Button label="Icon" showLabel={false} icon={<IconGoto size={14} />} />
       <Button label="Ghost" tone="ghost" />
       <Button label="Danger" tone="danger" />
     </div>
@@ -116,7 +126,9 @@ export const previews: Record<string, Component> = {
       <TextView text="Generic ViewGroup container." />
     </ViewGroup>
   ),
-  radialmenu: () => <RadialMenu items={[{ id: 'goto', label: 'Go' }, { id: 'redx', label: 'RX' }, { id: 'chat', label: 'CH' }]} />,
+  radialmenu: () => (
+    <RadialMenu items={[{ id: 'goto', label: 'Go' }, { id: 'redx', label: 'RX' }, { id: 'chat', label: 'CH' }, { id: 'lock', label: 'LK' }]} selected="goto" />
+  ),
   mapsource: () => {
     const [v, setV] = createSignal<'osm' | 'imagery' | 'terrain' | 'none'>('osm')
     return <MapSource value={v()} onChange={setV} />
@@ -141,13 +153,11 @@ export const previews: Record<string, Component> = {
         </>
       }
     >
-      <DeviceFrame>
-        <div style={{ position: 'relative', height: '100%', background: 'linear-gradient(180deg, #2a3340, #14181e)' }}>
-          <MapMarker affiliation="friendly" x="40%" y="30%" label="HAWK-1" />
-          <MapMarker affiliation="unknown" x="55%" y="48%" label="OWL-2" />
-          <MapMarker affiliation="hostile" x="28%" y="62%" label="VIPER" />
-        </div>
-      </DeviceFrame>
+      <div style={{ position: 'relative', height: '100%', background: 'linear-gradient(180deg, #2a3340, #14181e)' }}>
+        <MapMarker affiliation="friendly" x="40%" y="30%" label="HAWK-1" />
+        <MapMarker affiliation="unknown" x="55%" y="48%" label="OWL-2" />
+        <MapMarker affiliation="hostile" x="28%" y="62%" label="VIPER" />
+      </div>
     </Base>
   ),
   'ops-radial': () => (

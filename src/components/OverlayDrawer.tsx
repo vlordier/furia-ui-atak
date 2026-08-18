@@ -14,7 +14,7 @@ export const OverlayDrawer: Component<OverlayDrawerProps> = (props) => (
       data-testid="atak-overlay-drawer"
       data-side={props.side ?? 'right'}
       style={{
-        width: '280px',
+        width: 'min(280px, 42vw)',
         'max-height': '100%',
         overflow: 'auto',
         background: 'linear-gradient(180deg, #050506, #272d33)',
