@@ -5,7 +5,6 @@ Unofficial **SolidJS** kit. Furia owns this code.
 Visual **references** (not authorship):
 
 - [ATAK Design System](https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit) (Figma Community file `1571370238280853168`)
-- Team duplicate (MCP): [design file `vKo7t5RQdfIRvRZ7GQwT0G`](https://www.figma.com/design/vKo7t5RQdfIRvRZ7GQwT0G/ATAK-Design-System---Tactical-Assault-Kit---Team-Awareness-Kit--Community---Copy-)
 - [WinTAK Design System](https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit)
 - [Patrick Sherlund on GitHub](https://github.com/Patrick-Sherlund) — related public work, **not** the author of this package
 

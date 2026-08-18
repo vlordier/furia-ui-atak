@@ -8,18 +8,10 @@ export const Base: Component<{
   drawer?: JSX.Element
   children?: JSX.Element
 }> = (props) => (
-  <div class="atak-base atak-kit" data-testid="atak-base" style={{ display: 'flex', 'flex-direction': 'column', height: '100%', minHeight: '320px' }}>
+  <div class="atak-base atak-kit" data-testid="atak-base">
     <ToolBar title={props.title ?? 'ATAK Base'} items={[{ id: 'overflow', label: '⋮' }]} />
     <div style={{ display: 'flex', flex: 1, 'min-height': 0 }}>
-      <div
-        style={{
-          flex: 1,
-          background: 'linear-gradient(180deg, #1a2214 0%, #0b0d0a 100%)',
-          border: '1px solid var(--atak-border)',
-        }}
-      >
-        {props.children}
-      </div>
+      <div class="atak-base-map">{props.children}</div>
       <OverlayDrawer title="SA" open>
         {props.drawer}
       </OverlayDrawer>

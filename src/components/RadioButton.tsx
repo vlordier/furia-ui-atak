@@ -7,7 +7,7 @@ export const RadioButton: Component<{
   checked: boolean
   onChange?: (value: string) => void
 }> = (props) => (
-  <label class="atak-radio" style={{ display: 'flex', gap: '8px', 'align-items': 'center', cursor: 'pointer' }}>
+  <label class="atak-radio">
     <input
       type="radio"
       name={props.name}

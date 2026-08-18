@@ -1,14 +1,7 @@
 /**
- * MCP-readable duplicate of the unofficial community kit.
- * Community numeric file IDs are not valid Figma MCP fileKeys.
+ * Page node ids from the unofficial kit (stable across community → team copy).
+ * Do not store personal Figma access tokens or private /design/ file keys here.
  */
-export const ATAK_FIGMA_DESIGN = {
-  fileKey: 'vKo7t5RQdfIRvRZ7GQwT0G',
-  url: 'https://www.figma.com/design/vKo7t5RQdfIRvRZ7GQwT0G/ATAK-Design-System---Tactical-Assault-Kit---Team-Awareness-Kit--Community---Copy-',
-  claim: 'not-official-atak',
-} as const
-
-/** Page node ids from the duplicated file (get_metadata / Plugin API). */
 export const ATAK_FIGMA_PAGES = {
   componentsIndex: '29:3',
   base: '2:2',

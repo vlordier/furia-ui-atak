@@ -74,8 +74,10 @@ export const previews: Record<string, Component> = {
     return <SegmentedButton value={v()} onChange={setV} options={[{ id: '2d', label: '2D' }, { id: '3d', label: '3D' }]} />
   },
   button: () => (
-    <div style={{ display: 'flex', gap: '8px' }}>
-      <Button label="Primary" />
+    <div style={{ display: 'flex', gap: '8px', 'flex-wrap': 'wrap', 'align-items': 'flex-start' }}>
+      <Button label="Default" />
+      <Button label="Outlined" variant="outlined" />
+      <Button label="Tile" variant="tile" />
       <Button label="Ghost" tone="ghost" />
       <Button label="Danger" tone="danger" />
     </div>

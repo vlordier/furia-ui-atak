@@ -9,30 +9,13 @@ export const TabLayout: Component<{
   children?: JSX.Element
 }> = (props) => (
   <div class="atak-tablayout" data-testid="atak-tablayout">
-    <div role="tablist" style={{ display: 'flex', 'border-bottom': '1px solid var(--atak-border)' }}>
+    <div role="tablist">
       <For each={props.tabs}>
-        {(tab) => {
-          const on = () => tab.id === props.active
-          return (
-            <button
-              type="button"
-              role="tab"
-              aria-selected={on()}
-              onClick={() => props.onChange?.(tab.id)}
-              style={{
-                flex: 1,
-                padding: '8px',
-                border: 'none',
-                'border-bottom': on() ? '2px solid var(--atak-accent)' : '2px solid transparent',
-                background: 'transparent',
-                color: on() ? 'var(--atak-text)' : 'var(--atak-muted)',
-                cursor: 'pointer',
-              }}
-            >
-              {tab.label}
-            </button>
-          )
-        }}
+        {(tab) => (
+          <button type="button" role="tab" aria-selected={tab.id === props.active} onClick={() => props.onChange?.(tab.id)}>
+            {tab.label}
+          </button>
+        )}
       </For>
     </div>
     <div role="tabpanel" style={{ padding: '10px' }}>

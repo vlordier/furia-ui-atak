@@ -4,25 +4,17 @@ export const TableLayout: Component<{
   columns: readonly string[]
   rows: readonly (readonly string[])[]
 }> = (props) => (
-  <table class="atak-table" data-testid="atak-table" style={{ width: '100%', 'border-collapse': 'collapse', 'font-size': '12px' }}>
+  <table class="atak-table" data-testid="atak-table">
     <thead>
       <tr>
-        <For each={props.columns}>
-          {(col) => (
-            <th style={{ 'text-align': 'left', padding: '6px 8px', border: '1px solid var(--atak-border)', color: 'var(--atak-muted)' }}>
-              {col}
-            </th>
-          )}
-        </For>
+        <For each={props.columns}>{(col) => <th>{col}</th>}</For>
       </tr>
     </thead>
     <tbody>
       <For each={props.rows}>
         {(row) => (
           <tr>
-            <For each={row}>
-              {(cell) => <td style={{ padding: '6px 8px', border: '1px solid var(--atak-border)' }}>{cell}</td>}
-            </For>
+            <For each={row}>{(cell) => <td>{cell}</td>}</For>
           </tr>
         )}
       </For>

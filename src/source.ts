@@ -6,8 +6,6 @@
 export const ATAK_DS_REFERENCES = {
   figmaAtak:
     'https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit',
-  figmaAtakDesign:
-    'https://www.figma.com/design/vKo7t5RQdfIRvRZ7GQwT0G/ATAK-Design-System---Tactical-Assault-Kit---Team-Awareness-Kit--Community---Copy-',
   figmaWintak:
     'https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit',
   patrickSherlundGithub: 'https://github.com/Patrick-Sherlund',
@@ -16,10 +14,7 @@ export const ATAK_DS_REFERENCES = {
 export const ATAK_DS_SOURCE = {
   kind: 'figma-community-unofficial',
   fileId: '1571370238280853168',
-  /** MCP fileKey for the team duplicate (community numeric ids are not valid keys). */
-  designFileKey: 'vKo7t5RQdfIRvRZ7GQwT0G',
   url: ATAK_DS_REFERENCES.figmaAtak,
-  designUrl: ATAK_DS_REFERENCES.figmaAtakDesign,
   claim: 'not-official-atak',
 } as const
 

@@ -25,6 +25,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "check:secrets": "node scripts/check-no-secrets.mjs",
     "catalog": "vite --config vite.config.ts",
     "catalog:build": "vite build --config vite.config.ts"
   },

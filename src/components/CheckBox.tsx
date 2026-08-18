@@ -5,7 +5,7 @@ export const CheckBox: Component<{
   checked: boolean
   onChange?: (checked: boolean) => void
 }> = (props) => (
-  <label class="atak-checkbox" style={{ display: 'flex', gap: '8px', 'align-items': 'center', cursor: 'pointer' }}>
+  <label class="atak-checkbox">
     <input
       type="checkbox"
       data-testid="atak-checkbox"

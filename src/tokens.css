@@ -1,4 +1,4 @@
-/* Unofficial TAK-adjacent tokens from duplicated Figma Color Guide. Not TAK.gov. */
+/* Unofficial kit tokens (Color Guide). Not TAK.gov. */
 :root {
   --atak-bg: #222222;
   --atak-panel: #282828;
@@ -9,8 +9,11 @@
   --atak-stale: #dfb228;
   --atak-error: #c12a2a;
   --atak-accent: #33b5e5;
+  --atak-accent-focus: #0393c3;
   --atak-gradient-start: #363636;
   --atak-gradient-stop: #020202;
+  --atak-dock-start: #050506;
+  --atak-dock-stop: #272d33;
   --atak-font: ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -20,3 +23,223 @@
   font-family: var(--atak-font);
   font-size: 13px;
 }
+
+.atak-button {
+  font: inherit;
+  padding: 6px 14px;
+  min-height: 26px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(180deg, var(--atak-gradient-start), var(--atak-gradient-stop));
+  border: 1px solid var(--atak-border);
+}
+.atak-button:disabled { opacity: 0.45; cursor: not-allowed; }
+.atak-button[data-tone='ghost'] {
+  background: #585858;
+  color: #ccc;
+  border-color: #6e6e6e;
+}
+.atak-button[data-tone='danger'] {
+  background: #2a1210;
+  color: var(--atak-error);
+  border-color: var(--atak-error);
+}
+.atak-button[data-variant='outlined'] {
+  background: #585858;
+  border-color: #6e6e6e;
+  color: #ccc;
+}
+.atak-button[data-variant='tile'] {
+  min-width: 87px;
+  min-height: 83px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.atak-checkbox,
+.atak-radio {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+}
+.atak-checkbox input,
+.atak-radio input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid #6a6a6a;
+  background: #ffffff1a;
+  flex-shrink: 0;
+}
+.atak-checkbox input:checked {
+  border-color: #a7a8a9;
+  background:
+    linear-gradient(135deg, transparent 45%, #33b5e5 45%, #33b5e5 55%, transparent 55%) center / 10px 10px no-repeat,
+    #ffffff1a;
+}
+.atak-radio input { border-radius: 50%; }
+.atak-radio input:checked {
+  border-color: #9e9e9e;
+  background: radial-gradient(circle at 50% 50%, #d3f3ff 0 4px, #33b5e5 5px 6px, #ffffff1a 7px);
+}
+
+.atak-edittext,
+.atak-spinner {
+  display: block;
+  font-size: 11px;
+  color: var(--atak-muted);
+}
+.atak-edittext input,
+.atak-spinner select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #6d6d6d;
+  color: #fff;
+  font: inherit;
+}
+.atak-edittext input:focus {
+  outline: none;
+  border-bottom-color: var(--atak-accent-focus);
+}
+.atak-edittext[data-error] input { border-bottom-color: var(--atak-error); color: var(--atak-error); }
+.atak-spinner select {
+  padding: 8px 10px;
+  background: linear-gradient(180deg, var(--atak-gradient-start), var(--atak-gradient-stop));
+  border: 1px solid #505050;
+}
+
+.atak-seekbar { display: block; font-size: 11px; color: var(--atak-muted); }
+.atak-seekbar input[type='range'] {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  accent-color: var(--atak-accent);
+}
+
+.atak-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 8px;
+  background: #000;
+  border-bottom: 1px solid var(--atak-border);
+  color: #fff;
+}
+.atak-toolbar-burger {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: #000000b3;
+  color: #dad4bc;
+  cursor: pointer;
+}
+
+.atak-tablayout { background: linear-gradient(180deg, var(--atak-dock-start), var(--atak-dock-stop)); }
+.atak-tablayout [role='tablist'] { display: flex; border-bottom: 1px solid #2d2d30; }
+.atak-tablayout [role='tab'] {
+  flex: 1;
+  padding: 8px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: #030304;
+  color: #fff;
+  cursor: pointer;
+}
+.atak-tablayout [role='tab'][aria-selected='true'] {
+  background: #616262;
+  border-bottom-color: var(--atak-accent);
+}
+
+.atak-segmented { display: flex; background: #262626; }
+.atak-segmented button {
+  flex: 1;
+  padding: 8px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(180deg, #9e9e9e, #777);
+}
+.atak-segmented button[aria-pressed='true'] {
+  background: linear-gradient(180deg, #5ca9c2, #07769b);
+}
+
+.atak-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #00000099;
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+.atak-modal {
+  width: min(360px, 92vw);
+  background: #282828;
+  border: 1px solid #5b5b5b;
+  padding: 0;
+}
+.atak-modal h2 {
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--atak-accent);
+  border-bottom: 1px solid var(--atak-accent);
+}
+.atak-modal-body { padding: 14px; }
+
+.atak-listview,
+.atak-recyclerview {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: linear-gradient(180deg, var(--atak-dock-start), var(--atak-dock-stop));
+  border: 1px solid #303133;
+}
+.atak-listview button,
+.atak-recyclerview button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #303133;
+  color: #bebebe;
+  cursor: pointer;
+}
+
+.atak-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.atak-table th,
+.atak-table td { padding: 6px 8px; border: 1px solid #555; }
+.atak-table th { color: #fff; background: #050506; text-align: left; }
+.atak-table td { color: #bebebe; }
+
+.atak-textview[data-tone='success'] { color: #00ff00; }
+.atak-textview[data-tone='warning'] { color: #dfb228; }
+.atak-textview[data-tone='error'] { color: #ff0000; }
+
+.atak-base {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 320px;
+  background: var(--atak-bg);
+}
+.atak-base-map {
+  flex: 1;
+  min-height: 0;
+  background: linear-gradient(180deg, #1a1d22, #0b0c0e);
+  border: 1px solid var(--atak-border);
+}
+
+.atak-map-source { border: 1px solid var(--atak-border); margin: 0; padding: 8px; }
+.atak-map-source legend { color: var(--atak-muted); font-size: 11px; }

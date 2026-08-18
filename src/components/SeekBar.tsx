@@ -7,7 +7,7 @@ export const SeekBar: Component<{
   label?: string
   onInput?: (value: number) => void
 }> = (props) => (
-  <label class="atak-seekbar" style={{ display: 'block', 'font-size': '11px', color: 'var(--atak-muted)' }}>
+  <label class="atak-seekbar">
     {props.label ?? 'SeekBar'} · {props.value}
     <input
       type="range"
@@ -16,7 +16,6 @@ export const SeekBar: Component<{
       max={props.max ?? 100}
       value={props.value}
       onInput={(event) => props.onInput?.(Number(event.currentTarget.value))}
-      style={{ display: 'block', width: '100%', 'margin-top': '6px' }}
     />
   </label>
 )

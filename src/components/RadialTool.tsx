@@ -4,6 +4,7 @@ export type RadialToolItem = { id: string; label: string }
 
 export type RadialToolProps = {
   items: readonly RadialToolItem[]
+  selected?: string
   onPick?: (id: string) => void
 }
 
@@ -12,27 +13,37 @@ export const RadialTool: Component<RadialToolProps> = (props) => (
     class="atak-radial-tool"
     data-testid="atak-radial-tool"
     role="toolbar"
-    style={{ display: 'flex', gap: '6px', 'flex-wrap': 'wrap' }}
+    style={{
+      display: 'flex',
+      gap: '8px',
+      'flex-wrap': 'wrap',
+      padding: '10px',
+      background: '#000000bf',
+      'border-radius': '999px',
+    }}
   >
     <For each={props.items}>
-      {(item) => (
-        <button
-          type="button"
-          onClick={() => props.onPick?.(item.id)}
-          style={{
-            width: '44px',
-            height: '44px',
-            'border-radius': '50%',
-            border: '1px solid var(--atak-accent)',
-            background: 'var(--atak-bg)',
-            color: 'var(--atak-text)',
-            'font-size': '10px',
-            cursor: 'pointer',
-          }}
-        >
-          {item.label}
-        </button>
-      )}
+      {(item) => {
+        const on = () => item.id === props.selected
+        return (
+          <button
+            type="button"
+            onClick={() => props.onPick?.(item.id)}
+            style={{
+              width: '44px',
+              height: '44px',
+              'border-radius': '50%',
+              border: on() ? '2px solid #000' : '1px solid #d6d2bd',
+              background: on() ? '#ffe35e' : '#fff89d',
+              color: '#131415',
+              'font-size': '10px',
+              cursor: 'pointer',
+            }}
+          >
+            {item.label}
+          </button>
+        )
+      }}
     </For>
   </div>
 )

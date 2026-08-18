@@ -1,10 +1,13 @@
 import type { Component } from 'solid-js'
 
-export const TextView: Component<{ text: string; muted?: boolean }> = (props) => (
+export type TextViewTone = 'default' | 'success' | 'warning' | 'error'
+
+export const TextView: Component<{ text: string; muted?: boolean; tone?: TextViewTone }> = (props) => (
   <p
     class="atak-textview"
     data-testid="atak-textview"
-    style={{ margin: 0, color: props.muted ? 'var(--atak-muted)' : 'var(--atak-text)', 'line-height': 1.4 }}
+    data-tone={props.tone ?? 'default'}
+    style={{ margin: 0, color: props.muted ? 'var(--atak-muted)' : undefined, 'line-height': 1.4 }}
   >
     {props.text}
   </p>

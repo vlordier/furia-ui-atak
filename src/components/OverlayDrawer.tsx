@@ -17,8 +17,8 @@ export const OverlayDrawer: Component<OverlayDrawerProps> = (props) => (
         width: '280px',
         'max-height': '100%',
         overflow: 'auto',
-        background: 'var(--atak-panel)',
-        border: '1px solid var(--atak-border)',
+        background: 'linear-gradient(180deg, #050506, #272d33)',
+        border: '1px solid #303133',
         padding: '10px',
       }}
     >
