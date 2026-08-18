@@ -15,7 +15,16 @@ export type AtakBuilderTarget = {
 export const atakEdgeBuilderTarget: AtakBuilderTarget = {
   id: ATAK_EDGE_BUILDER_TARGET_ID,
   displayName: 'TAK edge (training)',
-  catalogIds: ['ds.cot-peer', 'ds.geochat', 'ds.objects', 'atak.sa-row', 'atak.overlay-drawer'],
+  catalogIds: [
+    'ds.cot-peer',
+    'ds.geochat',
+    'ds.objects',
+    'atak.sa-row',
+    'atak.overlay-drawer',
+    'atak.bottom-bar',
+    'atak.search-field',
+    'atak.map-chip',
+  ],
   profileIds: ['ds-tak-edge'],
   runtimeCapabilities: ['observe.cot'],
   packageKind: C2_PACKAGE_KIND,

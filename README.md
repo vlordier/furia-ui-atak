@@ -1,9 +1,11 @@
 # `@furia/ui-atak`
 
-Unofficial **SolidJS** kit inspired by the community Figma files:
+Unofficial **SolidJS** kit inspired by [Patrick Sherlund](https://github.com/Patrick-Sherlund)’s community Figma files:
 
-- [ATAK Design System](https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit)
+- [ATAK Design System](https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit) (file `1571370238280853168`)
 - [WinTAK Design System](https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit)
+
+Credit: **Patrick Sherlund** — see [ATTRIBUTION.md](./ATTRIBUTION.md). This is our Solid implementation, not his Figma source.
 
 **Not** ATAK-CIV/GOV/MIL, **not** official WinTAK, **not** TAK.gov, **not** a TAK Server client.
 
@@ -17,6 +19,8 @@ This package is carved out of Furia so TAK-adjacent chrome can be shared without
 | `OverlayDrawer` | Map-side SA / peer drawer |
 | `RadialTool` | Compact radial action cluster |
 | `GeoChatThread` | Training b-t-f chat list |
+| `BottomBar` / `IconButton` | Android-style bottom action strip |
+| `SearchField` / `MapChip` | Find callsign + map layer chips |
 | `atakEdgeBuilderTarget` | Furia Builder target `ds-tak-edge` |
 | `ATAK_DS_SOURCE` | Provenance for the community file |
 

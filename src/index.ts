@@ -1,4 +1,5 @@
 export {
+  ATAK_DS_AUTHOR,
   ATAK_DS_SOURCE,
   ATAK_EDGE_BUILDER_TARGET_ID,
   ATAK_INSPIRED_TOKENS,
@@ -12,3 +13,7 @@ export { SaRow, type SaRowProps } from './components/SaRow'
 export { OverlayDrawer, type OverlayDrawerProps } from './components/OverlayDrawer'
 export { RadialTool, type RadialToolItem, type RadialToolProps } from './components/RadialTool'
 export { GeoChatThread, type GeoChatMessage } from './components/GeoChatThread'
+export { IconButton, type IconButtonProps } from './components/IconButton'
+export { BottomBar, type BottomBarItem } from './components/BottomBar'
+export { SearchField } from './components/SearchField'
+export { MapChip } from './components/MapChip'

@@ -1,10 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import { ATAK_DS_SOURCE, ATAK_EDGE_BUILDER_TARGET_ID, atakDisclaimer } from './source'
+import { ATAK_DS_AUTHOR, ATAK_DS_SOURCE, ATAK_EDGE_BUILDER_TARGET_ID, atakDisclaimer } from './source'
 import { atakEdgeBuilderTarget } from './target'
 
 describe('ATAK kit source', () => {
   it('points at the unofficial community file and refuses official claim', () => {
     expect(ATAK_DS_SOURCE.fileId).toBe('1571370238280853168')
+    expect(ATAK_DS_SOURCE.url).toContain('1571370238280853168')
+    expect(ATAK_DS_SOURCE.author.githubLogin).toBe('Patrick-Sherlund')
+    expect(ATAK_DS_AUTHOR.github).toBe('https://github.com/Patrick-Sherlund')
     expect(ATAK_DS_SOURCE.claim).toBe('not-official-atak')
     expect(atakDisclaimer()).toMatch(/not official ATAK/)
     expect(atakEdgeBuilderTarget.id).toBe(ATAK_EDGE_BUILDER_TARGET_ID)

@@ -12,9 +12,13 @@ Product **TAK-edge** UI pack. Inspired by unofficial ATAK/WinTAK Figma community
 - `@furia/ui` must **not** import `@furia/ui-atak`.
 - Do not ship TAK Product Center marks or claim official ATAK.
 
-## Figma source
+## Figma source (author)
+
+**Patrick Sherlund** ([GitHub](https://github.com/Patrick-Sherlund)) authored the unofficial kits:
 
 - ATAK: https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit
 - WinTAK: https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit
+
+See [ATTRIBUTION.md](./ATTRIBUTION.md).
 
 Community files are read-only until duplicated into an org team. This repo implements the **operator surfaces we need**, not every kit frame.
