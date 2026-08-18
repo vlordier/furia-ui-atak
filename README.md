@@ -1,11 +1,14 @@
 # `@furia/ui-atak`
 
-Unofficial **SolidJS** kit inspired by [Patrick Sherlund](https://github.com/Patrick-Sherlund)’s community Figma files:
+Unofficial **SolidJS** kit. Furia owns this code.
 
-- [ATAK Design System](https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit) (file `1571370238280853168`)
+Visual **references** (not authorship):
+
+- [ATAK Design System](https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit) (Figma Community file `1571370238280853168`)
 - [WinTAK Design System](https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit)
+- [Patrick Sherlund on GitHub](https://github.com/Patrick-Sherlund) — related public work, **not** the author of this package
 
-Credit: **Patrick Sherlund** — see [ATTRIBUTION.md](./ATTRIBUTION.md). This is our Solid implementation, not his Figma source.
+See [ATTRIBUTION.md](./ATTRIBUTION.md).
 
 **Not** ATAK-CIV/GOV/MIL, **not** official WinTAK, **not** TAK.gov, **not** a TAK Server client.
 

@@ -2,25 +2,26 @@
  * Unofficial community Figma kits. Not ATAK-CIV/GOV/MIL, WinTAK, or TAK.gov.
  */
 
-export const ATAK_DS_AUTHOR = {
-  name: 'Patrick Sherlund',
-  github: 'https://github.com/Patrick-Sherlund',
-  githubLogin: 'Patrick-Sherlund',
+/** Public references only — not authors of this package. */
+export const ATAK_DS_REFERENCES = {
+  figmaAtak:
+    'https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit',
+  figmaWintak:
+    'https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit',
+  patrickSherlundGithub: 'https://github.com/Patrick-Sherlund',
 } as const
 
 export const ATAK_DS_SOURCE = {
   kind: 'figma-community-unofficial',
   fileId: '1571370238280853168',
-  url: 'https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit',
-  author: ATAK_DS_AUTHOR,
+  url: ATAK_DS_REFERENCES.figmaAtak,
   claim: 'not-official-atak',
 } as const
 
 export const WINTAK_DS_SOURCE = {
   kind: 'figma-community-unofficial',
   fileId: '1573375430276099247',
-  url: 'https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit',
-  author: ATAK_DS_AUTHOR,
+  url: ATAK_DS_REFERENCES.figmaWintak,
   claim: 'not-official-wintak',
 } as const
 
