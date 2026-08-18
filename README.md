@@ -14,6 +14,12 @@ See [ATTRIBUTION.md](./ATTRIBUTION.md).
 
 This package is carved out of Furia so TAK-adjacent chrome can be shared without pulling Delta desktop C2 or `@furia/ui` into every consumer.
 
+## Catalog pages
+
+`npm run catalog` — one page per surface:
+
+ATAK Base · ToolBar · TabLayout · CheckBox · Spinner · EditText · SeekBar · RadioButton · Modal · Button · TextView · SegmentedButton · TableLayout · ListView · RecyclerView · ATAK RadialMenu · ATAK Map Source · ATAK Symbology
+
 ## What you get
 
 | Export | Role |
