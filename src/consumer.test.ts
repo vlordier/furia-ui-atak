@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { ATAK_CATALOG_SLUGS, ATAK_KIT_COLORS, atakDisclaimer } from './index'
+import { ATAK_CATALOG_SLUGS, ATAK_KIT_COLORS, ATAK_SCENARIO_SLUGS, atakDisclaimer } from './index'
 
 const required = [
   'base',
@@ -32,5 +32,7 @@ describe('package consumer', () => {
     expect(ATAK_KIT_COLORS.bg).toBe('#222222')
     expect(ATAK_KIT_COLORS.error).toBe('#c12a2a')
     expect(ATAK_KIT_COLORS.friendly).toBe('#9dfbff')
+    expect(ATAK_SCENARIO_SLUGS).toContain('ops-cop')
+    expect(ATAK_SCENARIO_SLUGS).toHaveLength(4)
   })
 })

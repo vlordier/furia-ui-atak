@@ -6,6 +6,7 @@
 import { ATAK_CATALOG_SLUGS } from '../src/catalog.ts'
 import { atakDisclaimer } from '../src/source.ts'
 import { ATAK_KIT_COLORS } from '../src/tokens.ts'
+import { ATAK_SCENARIO_SLUGS } from '../src/scenarios.ts'
 
 const required = [
   'base',
@@ -42,5 +43,9 @@ if (ATAK_KIT_COLORS.accent !== '#33b5e5') {
   console.error('accent token missing')
   process.exit(1)
 }
-console.log('consumer ok slugs=' + ATAK_CATALOG_SLUGS.length)
+if (ATAK_SCENARIO_SLUGS.length !== 4 || !ATAK_SCENARIO_SLUGS.includes('ops-cop')) {
+  console.error('scenario slug mismatch', ATAK_SCENARIO_SLUGS)
+  process.exit(1)
+}
+console.log('consumer ok slugs=' + ATAK_CATALOG_SLUGS.length + ' scenarios=' + ATAK_SCENARIO_SLUGS.length)
 console.log(atakDisclaimer())

@@ -20,6 +20,10 @@ This package is carved out of Furia so TAK-adjacent chrome can be shared without
 
 ATAK Base · ToolBar · TabLayout · CheckBox · Spinner · EditText · SeekBar · RadioButton · Modal · Button · TextView · SegmentedButton · TableLayout · ListView · RecyclerView · AccordionView · ViewGroup · ATAK RadialMenu · ATAK Map Source · ATAK Symbology
 
+**Scenarios** (Example Plugin stand-ins): Dynamic Ops — COP · Modal · SA + GeoChat · Radial on map. Hash routes `#/ops-cop`, `#/ops-modal`, `#/ops-sa`, `#/ops-radial`.
+
+Catalog screenshots: [ops-cop](./catalog/renders/ops-cop.png) · [ops-modal](./catalog/renders/ops-modal.png) · [ops-sa](./catalog/renders/ops-sa.png) · [ops-radial](./catalog/renders/ops-radial.png) · [button](./catalog/renders/button.png)
+
 ## What you get
 
 | Export | Role |

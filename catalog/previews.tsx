@@ -26,6 +26,9 @@ import {
   TextView,
   ToolBar,
   ViewGroup,
+  DynamicOps,
+  DeviceFrame,
+  MapMarker,
 } from '../src'
 
 export const previews: Record<string, Component> = {
@@ -119,6 +122,45 @@ export const previews: Record<string, Component> = {
     return <MapSource value={v()} onChange={setV} />
   },
   symbology: () => <SymbologyLegend />,
+  'ops-cop': () => <DynamicOps />,
+  'ops-modal': () => <DynamicOps modal />,
+  'ops-sa': () => (
+    <Base
+      title="SA"
+      drawer={
+        <>
+          <SaRow callsign="HAWK-1" state="live" cotType="a-f-A" />
+          <SaRow callsign="OWL-2" state="stale" cotType="a-f-G" staleAfter="12s" />
+          <SaRow callsign="VIPER" state="error" cotType="a-h-A" />
+          <GeoChatThread
+            messages={[
+              { id: '1', from: 'HAWK-1', body: 'On station', at: '12:01' },
+              { id: '2', from: 'OWL-2', body: 'Stale — last report 12s', at: '12:02' },
+            ]}
+          />
+        </>
+      }
+    >
+      <DeviceFrame>
+        <div style={{ position: 'relative', height: '100%', background: 'linear-gradient(180deg, #2a3340, #14181e)' }}>
+          <MapMarker affiliation="friendly" x="40%" y="30%" label="HAWK-1" />
+          <MapMarker affiliation="unknown" x="55%" y="48%" label="OWL-2" />
+          <MapMarker affiliation="hostile" x="28%" y="62%" label="VIPER" />
+        </div>
+      </DeviceFrame>
+    </Base>
+  ),
+  'ops-radial': () => (
+    <DeviceFrame>
+      <div style={{ position: 'relative', height: '100%', background: 'linear-gradient(180deg, #2a3340, #14181e)' }}>
+        <MapMarker affiliation="friendly" x="46%" y="40%" />
+        <MapMarker affiliation="hostile" x="58%" y="52%" />
+        <div style={{ position: 'absolute', left: '42%', top: '46%' }}>
+          <RadialMenu items={[{ id: 'goto', label: 'Go' }, { id: 'redx', label: 'RX' }, { id: 'chat', label: 'CH' }, { id: 'lock', label: 'LK' }]} selected="chat" />
+        </div>
+      </div>
+    </DeviceFrame>
+  ),
   extra: () => (
     <div style={{ display: 'grid', gap: '10px' }}>
       <SearchField value="" />

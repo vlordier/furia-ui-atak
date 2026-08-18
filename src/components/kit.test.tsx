@@ -13,6 +13,7 @@ import { Modal } from './Modal'
 import { MapSource } from './MapSource'
 import { RadioButton } from './RadioButton'
 import { TextView } from './TextView'
+import { DynamicOps } from './DynamicOps'
 
 describe('kit controls', () => {
   it('toggles checkbox', () => {
@@ -124,5 +125,14 @@ describe('kit controls', () => {
     ))
     fireEvent.click(getAllByTestId('atak-radio')[1]!)
     expect(onChange).toHaveBeenCalledWith('replay')
+  })
+
+  it('renders a Dynamic Ops scene with map markers and dock', () => {
+    const { getByTestId, getAllByTestId, getByText } = render(() => <DynamicOps />)
+    expect(getByTestId('atak-device')).toBeTruthy()
+    expect(getAllByTestId('atak-map-marker').length).toBeGreaterThan(2)
+    expect(getByText('HAWK-1')).toBeTruthy()
+    fireEvent.click(getByText('Edit'))
+    expect(getByText('Edit track')).toBeTruthy()
   })
 })
