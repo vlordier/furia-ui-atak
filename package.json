@@ -1,0 +1,40 @@
+{
+  "name": "@furia/ui-atak",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Unofficial ATAK/WinTAK-inspired SolidJS kit for Furia TAK-edge authoring. Not official ATAK, WinTAK, or TAK.gov.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vlordier/furia-ui-atak.git"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./target": {
+      "types": "./src/target.ts",
+      "default": "./src/target.ts"
+    },
+    "./tokens.css": "./src/tokens.css"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.9.0"
+  },
+  "devDependencies": {
+    "@solidjs/testing-library": "^0.8.10",
+    "jsdom": "^25.0.1",
+    "solid-js": "^1.9.9",
+    "typescript": "^5.9.2",
+    "vite-plugin-solid": "^2.11.8",
+    "vitest": "^3.2.4"
+  }
+}

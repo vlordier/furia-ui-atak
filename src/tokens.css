@@ -1,0 +1,20 @@
+/* Unofficial TAK-adjacent tokens. Not TAK Product Center branding. */
+:root {
+  --atak-bg: #0b0d0a;
+  --atak-panel: #161a14;
+  --atak-border: #3a4234;
+  --atak-text: #e6e8df;
+  --atak-muted: #8b927e;
+  --atak-live: #8fbf4d;
+  --atak-stale: #c9a227;
+  --atak-error: #c44b3c;
+  --atak-accent: #6f8f3a;
+  --atak-font: ui-sans-serif, system-ui, sans-serif;
+}
+
+.atak-kit {
+  color: var(--atak-text);
+  background: var(--atak-bg);
+  font-family: var(--atak-font);
+  font-size: 13px;
+}

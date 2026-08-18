@@ -1,0 +1,46 @@
+# `@furia/ui-atak`
+
+Unofficial **SolidJS** kit inspired by the community Figma files:
+
+- [ATAK Design System](https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit)
+- [WinTAK Design System](https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit)
+
+**Not** ATAK-CIV/GOV/MIL, **not** official WinTAK, **not** TAK.gov, **not** a TAK Server client.
+
+This package is carved out of Furia so TAK-adjacent chrome can be shared without pulling Delta desktop C2 or `@furia/ui` into every consumer.
+
+## What you get
+
+| Export | Role |
+| --- | --- |
+| `SaRow` / `StatusChip` | SA list row + live/stale/error |
+| `OverlayDrawer` | Map-side SA / peer drawer |
+| `RadialTool` | Compact radial action cluster |
+| `GeoChatThread` | Training b-t-f chat list |
+| `atakEdgeBuilderTarget` | Furia Builder target `ds-tak-edge` |
+| `ATAK_DS_SOURCE` | Provenance for the community file |
+
+There was **no** 1:1 Solid port of every Figma frame. These are the kit surfaces we actually use (CoT SA, overlay, GeoChat). Desktop Furia/Delta chrome stays Furia.
+
+## Install
+
+```bash
+npm install @furia/ui-atak solid-js
+```
+
+```tsx
+import { OverlayDrawer, SaRow } from '@furia/ui-atak'
+import '@furia/ui-atak/tokens.css'
+
+<OverlayDrawer title="SA">
+  <SaRow callsign="HAWK-1" state="live" />
+</OverlayDrawer>
+```
+
+## Split rules
+
+- This pack **must not** import `@furia/builder`.
+- `@furia/ui` **must not** import `@furia/ui-atak` (platform stays kit-agnostic).
+- Hosts (`tupac` `ds-tak-edge`) may depend on this package.
+
+See [PLATFORM-SPLIT.md](./PLATFORM-SPLIT.md).
