@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "atak",
+  "project_id": "964b871d-a7d4-457c-b0b2-062183c48b40"
+}
