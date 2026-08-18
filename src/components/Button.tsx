@@ -14,9 +14,13 @@ export const Button: Component<{
       return { background: '#2a1210', color: 'var(--atak-error)', border: '1px solid var(--atak-error)' }
     }
     if (tone() === 'ghost') {
-      return { background: 'transparent', color: 'var(--atak-text)', border: '1px solid var(--atak-border)' }
+      return { background: '#585858', color: '#cccccc', border: '1px solid #6e6e6e' }
     }
-    return { background: 'var(--atak-accent)', color: 'var(--atak-bg)', border: '1px solid var(--atak-accent)' }
+    return {
+      background: 'linear-gradient(180deg, var(--atak-gradient-start), var(--atak-gradient-stop))',
+      color: '#ffffff',
+      border: '1px solid var(--atak-border)',
+    }
   }
   return (
     <button

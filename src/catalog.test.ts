@@ -17,6 +17,8 @@ const required = [
   'tablelayout',
   'listview',
   'recyclerview',
+  'accordionview',
+  'viewgroup',
   'radialmenu',
   'mapsource',
   'symbology',

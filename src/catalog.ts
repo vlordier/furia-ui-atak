@@ -22,6 +22,8 @@ export const ATAK_CATALOG: readonly AtakCatalogPage[] = [
   { slug: 'tablelayout', title: 'TableLayout', group: 'lists', summary: 'Fixed-column table.' },
   { slug: 'listview', title: 'ListView', group: 'lists', summary: 'Simple scrolling list.' },
   { slug: 'recyclerview', title: 'RecyclerView', group: 'lists', summary: 'Windowed list for long SA feeds.' },
+  { slug: 'accordionview', title: 'AccordionView', group: 'lists', summary: 'Expandable section list.' },
+  { slug: 'viewgroup', title: 'ViewGroup', group: 'lists', summary: 'Generic grouped view container.' },
   { slug: 'radialmenu', title: 'ATAK RadialMenu', group: 'map', summary: 'Radial action cluster on the map.' },
   { slug: 'mapsource', title: 'ATAK Map Source', group: 'map', summary: 'Basemap source picker.' },
   { slug: 'symbology', title: 'ATAK Symbology', group: 'map', summary: 'Affiliation marks (not official 2525 product).' },

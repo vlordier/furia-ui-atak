@@ -1,5 +1,6 @@
 import { createSignal, type Component } from 'solid-js'
 import {
+  AccordionView,
   Base,
   BottomBar,
   Button,
@@ -24,6 +25,7 @@ import {
   TableLayout,
   TextView,
   ToolBar,
+  ViewGroup,
 } from '../src'
 
 export const previews: Record<string, Component> = {
@@ -95,6 +97,19 @@ export const previews: Record<string, Component> = {
   listview: () => <ListView items={[{ id: '1', title: 'HAWK-1', detail: 'a-f-A' }, { id: '2', title: 'OWL-2', detail: 'stale' }]} />,
   recyclerview: () => (
     <RecyclerView items={Array.from({ length: 40 }, (_, i) => ({ id: String(i), title: `Track ${i + 1}` }))} windowSize={6} />
+  ),
+  accordionview: () => (
+    <AccordionView
+      sections={[
+        { id: 'sa', title: 'SA', body: <SaRow callsign="HAWK-1" state="live" /> },
+        { id: 'chat', title: 'GeoChat', body: <TextView text="Training thread" muted /> },
+      ]}
+    />
+  ),
+  viewgroup: () => (
+    <ViewGroup title="Group">
+      <TextView text="Generic ViewGroup container." />
+    </ViewGroup>
   ),
   radialmenu: () => <RadialMenu items={[{ id: 'goto', label: 'Go' }, { id: 'redx', label: 'RX' }, { id: 'chat', label: 'CH' }]} />,
   mapsource: () => {

@@ -7,6 +7,7 @@ The following are **visual/reference** links only — unofficial community mater
 | Reference | URL |
 | --- | --- |
 | ATAK Design System (Figma Community) | https://www.figma.com/community/file/1571370238280853168/atak-design-system-tactical-assault-kit-team-awareness-kit |
+| Team duplicate (MCP fileKey `vKo7t5RQdfIRvRZ7GQwT0G`) | https://www.figma.com/design/vKo7t5RQdfIRvRZ7GQwT0G/ATAK-Design-System---Tactical-Assault-Kit---Team-Awareness-Kit--Community---Copy- |
 | WinTAK Design System (Figma Community) | https://www.figma.com/community/file/1573375430276099247/wintak-design-system-windows-tactical-assault-kit-team-awareness-kit |
 | Patrick Sherlund (GitHub, related public work) | https://github.com/Patrick-Sherlund |
 
