@@ -30,3 +30,27 @@ export const ATAK_CATALOG: readonly AtakCatalogPage[] = [
 ] as const
 
 export const ATAK_CATALOG_SLUGS = ATAK_CATALOG.map((page) => page.slug)
+
+/** Catalog slug → shipped export name used on that page. */
+export const ATAK_CATALOG_EXPORTS: Record<(typeof ATAK_CATALOG)[number]['slug'], string> = {
+  base: 'Base',
+  toolbar: 'ToolBar',
+  tablayout: 'TabLayout',
+  checkbox: 'CheckBox',
+  spinner: 'Spinner',
+  edittext: 'EditText',
+  seekbar: 'SeekBar',
+  radiobutton: 'RadioButton',
+  modal: 'Modal',
+  button: 'Button',
+  textview: 'TextView',
+  segmentedbutton: 'SegmentedButton',
+  tablelayout: 'TableLayout',
+  listview: 'ListView',
+  recyclerview: 'RecyclerView',
+  accordionview: 'AccordionView',
+  viewgroup: 'ViewGroup',
+  radialmenu: 'RadialMenu',
+  mapsource: 'MapSource',
+  symbology: 'Symbology',
+}

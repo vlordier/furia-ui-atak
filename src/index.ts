@@ -8,7 +8,7 @@ export {
   type AtakInspiredToken,
 } from './source'
 export { atakEdgeBuilderTarget, C2_PACKAGE_KIND, type AtakBuilderTarget } from './target'
-export { ATAK_CATALOG, ATAK_CATALOG_SLUGS, type AtakCatalogPage } from './catalog'
+export { ATAK_CATALOG, ATAK_CATALOG_EXPORTS, ATAK_CATALOG_SLUGS, type AtakCatalogPage } from './catalog'
 export { ATAK_FIGMA_PAGES } from './figma'
 export { ATAK_KIT_COLORS } from './tokens'
 export { StatusChip, type SaLinkState } from './components/StatusChip'

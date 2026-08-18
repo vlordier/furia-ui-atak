@@ -25,4 +25,8 @@ export const ATAK_KIT_COLORS = {
   buttonPressed: '#585858',
   modalBackdrop: '#00000099',
   hamburger: '#dad4bc',
+  friendly: '#9dfbff',
+  hostile: '#ff8282',
+  neutral: '#9dffaf',
+  unknown: '#fff89d',
 } as const

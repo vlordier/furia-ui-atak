@@ -21,6 +21,7 @@ export const MapSource: Component<{
           <input
             type="radio"
             name="atak-map-source"
+            data-testid={`atak-map-${src.id}`}
             checked={props.value === src.id}
             onChange={() => props.onChange?.(src.id)}
           />{' '}

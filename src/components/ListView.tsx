@@ -8,7 +8,7 @@ export const ListView: Component<{
     <For each={props.items}>
       {(item) => (
         <li>
-          <button type="button" onClick={() => props.onSelect?.(item.id)}>
+          <button type="button" data-testid={`atak-list-${item.id}`} onClick={() => props.onSelect?.(item.id)}>
             <strong style={{ color: '#fff' }}>{item.title}</strong>
             {item.detail ? <span style={{ display: 'block', 'font-size': '11px' }}>{item.detail}</span> : null}
           </button>

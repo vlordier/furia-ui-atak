@@ -1,13 +1,14 @@
 import { For, type Component } from 'solid-js'
+import { ATAK_KIT_COLORS } from '../tokens'
 
 export type Affiliation = 'friendly' | 'hostile' | 'neutral' | 'unknown'
 
 /** Color Guide Symbology/Marker fills — not official 2525 product. */
 const fill: Record<Affiliation, string> = {
-  friendly: '#9dfbff',
-  hostile: '#ff8282',
-  neutral: '#9dffaf',
-  unknown: '#fff89d',
+  friendly: ATAK_KIT_COLORS.friendly,
+  hostile: ATAK_KIT_COLORS.hostile,
+  neutral: ATAK_KIT_COLORS.neutral,
+  unknown: ATAK_KIT_COLORS.unknown,
 }
 
 export const Symbology: Component<{
